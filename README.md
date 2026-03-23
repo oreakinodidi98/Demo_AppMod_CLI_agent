@@ -81,14 +81,21 @@ Assess multiple repositories in a single batch run.
 ]
 ```
 
-3. Or if everything is local can put all those source code projects into a repos folder (parent folder)
-4. Then can run `modernize -source c:/repos `
-5. But if everything is on github can run `modernize` which will scann and identiy x amount of repos in `repos.json`
-6. then `CTRL + A` to select all the projects
-7. Then can Assess application
-   1. Assess locally
-      1. Will clone all the repos listed in Github
-      2. then go through each source code
-      3. loops through all repos
-      4. Produces consolidated assessment report
-   2. Or delegate to cloud coding agents
+**Running Multi-Repo Assessments:**
+
+You can source repositories either locally or from GitHub:
+
+- **Local source** — Place all project directories under a parent folder and run:
+
+  ```bash
+  modernize -source c:/repos
+  ```
+
+- **GitHub source** — Run `modernize` to scan and identify all repositories listed in `repos.json`
+
+Then select the projects to assess (`Ctrl+A` to select all) and choose an assessment mode:
+
+| Mode | Description |
+|---|---|
+| **Assess Locally** | Clones all listed repos from GitHub, iterates through each source code project, and produces a consolidated assessment report |
+| **Delegate to Cloud Coding Agents** | Offloads assessment to [cloud coding agents](https://code.visualstudio.com/docs/copilot/agents/cloud-agents) for parallel processing |
